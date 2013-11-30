@@ -20,14 +20,12 @@ on init
     mkdir /storage/usbdisk0 0700 root root
 
     # Support legacy paths
-    symlink /storage/emulated/legacy /sdcard1
-    symlink /storage/emulated/legacy /mnt/sdcard1
-    symlink /storage/emulated/legacy /storage/sdcard1
+    symlink /storage/emulated/legacy /sdcard
+    symlink /storage/emulated/legacy /mnt/sdcard
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-    symlink /storage/sdcard0 /mnt/sdcard
-    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sd-ext
     symlink /storage/usbdisk0 /mnt/usbdisk
-    symlink /storage/usbdisk0 /usbdisk
+
 
 on fs
     # Mount partitions

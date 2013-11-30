@@ -43,9 +43,6 @@ media/chargingwarning.qmg
 media/LMprec_508.emd
 media/PFFprec_600.emd
 
-# FM Radio
-#bin/fmconfig
-
 # OMX
 lib/libDivxDrm.so
 lib/libdivxdrmdecrypt.so

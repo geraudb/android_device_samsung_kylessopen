@@ -29,12 +29,6 @@ PRODUCT_PACKAGES += \
     setup_fs \
     com.android.future.usb.accessory
 
-# FM Radio
-#PRODUCT_PACKAGES += \
-#    qcom.fmradio \
-#    libqcomfm_jni \
-#    FM2
-
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm7x27a

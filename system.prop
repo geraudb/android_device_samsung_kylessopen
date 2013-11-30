@@ -29,7 +29,7 @@ ro.telephony.call_ring.multiple=false
 ro.telephony.call_ring.delay=3000
 
 # USB
-persist.sys.usb.config=mass_storage,adb
+persist.sys.usb.config=mtp,adb
 
 # Wifi
 wifi.interface=wlan0
