@@ -65,6 +65,7 @@ USE_OPENGL_RENDERER := true
 TARGET_QCOM_DISPLAY_VARIANT := legacy
 TARGET_NO_HW_VSYNC := true
 BOARD_ADRENO_DECIDE_TEXTURE_TARGET := true
+COMMON_GLOBAL_CFLAGS += -DFORCE_SCREENSHOT_CPU_PATH
 
 # OMX
 TARGET_QCOM_LEGACY_OMX := true
@@ -117,6 +118,10 @@ TARGET_FORCE_CPU_UPLOAD := true
 # Bootanimation
 TARGET_NO_INITLOGO := true
 TARGET_BOOTANIMATION_USE_RGB565 := true
+
+# Off-mode charging
+BOARD_CHARGING_MODE_BOOTING_LPM := "/sys/class/power_supply/ac/online"
+BOARD_BATTERY_DEVICE_NAME := "battery"
 
 # Recovery
 TARGET_RECOVERY_INITRC := device/samsung/kylessopen/recovery/init.rc
