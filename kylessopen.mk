@@ -19,8 +19,8 @@ PRODUCT_PACKAGES += \
     audio.primary.msm7x27a
 
 # Bluetooth
-PRODUCT_PACKAGES += \
-    btmac
+#PRODUCT_PACKAGES += \
+#    btmac
 
 # Device
 PRODUCT_PACKAGES += \

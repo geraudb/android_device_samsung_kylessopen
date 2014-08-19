@@ -57,7 +57,7 @@ BOARD_VOLD_MAX_PARTITIONS := 24
 
 # Qualcomm hardware
 BOARD_USES_QCOM_HARDWARE := true
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DDQCOM_ICS_DECODERS
 
 # Graphics
 BOARD_EGL_CFG := device/samsung/kylessopen/prebuilt/system/lib/egl/egl.cfg
@@ -97,8 +97,8 @@ WIFI_DRIVER_FW_PATH_AP  := "ap"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
 
 # Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/kylessopen/bluetooth
+BOARD_HAVE_BLUETOOTH := false
+# BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/kylessopen/bluetooth
 
 # Audio
 TARGET_PROVIDES_LIBAUDIO := true

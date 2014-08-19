@@ -2992,8 +2992,8 @@ status_t AudioHardware::AudioStreamInMSM72xx::set(
     if ((pFormat == 0) ||
         ((*pFormat != AUDIO_HW_IN_FORMAT) &&
          (*pFormat != AudioSystem::AMR_NB) &&
-         (*pFormat != AudioSystem::EVRC) &&
-         (*pFormat != AudioSystem::QCELP) &&
+         //(*pFormat != AudioSystem::EVRC) &&
+         //(*pFormat != AudioSystem::QCELP) &&
          (*pFormat != AudioSystem::AAC)))
     {
         *pFormat = AUDIO_HW_IN_FORMAT;
@@ -3084,9 +3084,9 @@ status_t AudioHardware::AudioStreamInMSM72xx::set(
     mSampleRate = config.sample_rate;
     mBufferSize = config.buffer_size;
     }
-    else if( (*pFormat == AudioSystem::AMR_NB) ||
-             (*pFormat == AudioSystem::EVRC) ||
-             (*pFormat == AudioSystem::QCELP))
+    else if( (*pFormat == AudioSystem::AMR_NB)) //||
+             //(*pFormat == AudioSystem::EVRC) ||
+             //(*pFormat == AudioSystem::QCELP))
            {
 
       // open vocie memo input device
@@ -3148,7 +3148,7 @@ status_t AudioHardware::AudioStreamInMSM72xx::set(
           break;
         }
 
-        case AudioSystem::EVRC:
+        /*case AudioSystem::EVRC:
         {
           ALOGI("Recording Format: EVRC");
           gcfg.capability = RPC_VOC_CAP_IS127;
@@ -3171,7 +3171,7 @@ status_t AudioHardware::AudioStreamInMSM72xx::set(
           mBufferSize = 350;
           break;
         }
-
+        */
         default:
         break;
       }
@@ -3380,7 +3380,7 @@ AudioHardware::AudioSessionOutLPA::AudioSessionOutLPA( AudioHardware *hw,
     mEventThread        = NULL;
     mEventThreadAlive   = false;
     mKillEventThread    = false;
-    mObserver           = NULL;
+    //mObserver           = NULL;
     if((format == AUDIO_FORMAT_PCM_16_BIT) && (mChannels == 0 || mChannels > 2)) {
         ALOGE("Invalid number of channels %d", channels);
         return;
@@ -3497,10 +3497,10 @@ ssize_t AudioHardware::AudioSessionOutLPA::write(const void* buffer, size_t byte
         if (mFilledQueue.empty() && !mEosEventReceived) {
             ALOGV("mEosEventReceived made true");
             mEosEventReceived = true;
-            if (mObserver != NULL) {
-                ALOGV("mObserver: posting EOS");
-                mObserver->postEOS(0);
-            }
+            //if (mObserver != NULL) {
+                //ALOGV("mObserver: posting EOS");
+                //mObserver->postEOS(0);
+            //}
         }
         mFilledQueueMutex.unlock();
         return NO_ERROR;
@@ -3818,15 +3818,15 @@ void  AudioHardware::AudioSessionOutLPA::eventThreadEntry()
                         if (mFilledQueue.empty() && mReachedEOS && mGenerateEOS) {
                             ALOGV("Posting the EOS to the observer player %p", mObserver);
                             mEosEventReceived = true;
-                            if (mObserver != NULL) {
-                                mLock.unlock();
-                                if (fsync(afd) != 0) {
+                            //if (mObserver != NULL) {
+                               // mLock.unlock();
+                                //if (fsync(afd) != 0) {
                                     ALOGE("fsync failed.");
-                                }
-                                mLock.lock();
-                                ALOGV("mObserver: posting EOS");
-                                mObserver->postEOS(0);
-                            }
+                               // }
+                               // mLock.lock();
+                               // ALOGV("mObserver: posting EOS");
+                               // mObserver->postEOS(0);
+                            //}
                         }
                         break;
                     }
@@ -4018,7 +4018,7 @@ status_t AudioHardware::AudioSessionOutLPA::stop()
 status_t AudioHardware::AudioSessionOutLPA::setObserver(void *observer)
 {
     ALOGV("Registering the callback \n");
-    mObserver = reinterpret_cast<AudioEventObserver *>(observer);
+    //mObserver = reinterpret_cast<AudioEventObserver *>(observer);
     return NO_ERROR;
 }
 
@@ -4051,7 +4051,7 @@ status_t AudioHardware::AudioSessionOutLPA::getRenderPosition(uint32_t *dspFrame
     return INVALID_OPERATION;
 }
 
-status_t AudioHardware::AudioSessionOutLPA::getBufferInfo(buf_info **buf) {
+/*status_t AudioHardware::AudioSessionOutLPA::getBufferInfo(buf_info **buf) {
 
     buf_info *tempbuf = (buf_info *)malloc(sizeof(buf_info) + mInputBufferCount*sizeof(int *));
     ALOGV("Get buffer info");
@@ -4066,7 +4066,7 @@ status_t AudioHardware::AudioSessionOutLPA::getBufferInfo(buf_info **buf) {
     *buf = tempbuf;
     return NO_ERROR;
 }
-
+*/
 status_t AudioHardware::AudioSessionOutLPA::isBufferAvailable(int *isAvail) {
 
     Mutex::Autolock autoLock(mLock);
@@ -4300,4 +4300,4 @@ extern "C" AudioHardwareInterface* createAudioHardware(void) {
     return new AudioHardware();
 }
 
-}; // namespace android
+} // namespace android

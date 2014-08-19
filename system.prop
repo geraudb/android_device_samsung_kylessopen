@@ -3,7 +3,7 @@
 #
 
 # Bluetooth
-ro.bt.bdaddr_path=/data/misc/bluedroid/bdaddr
+#ro.bt.bdaddr_path=/data/misc/bluedroid/bdaddr
 
 # Dalvik
 dalvik.vm.checkjni=0
