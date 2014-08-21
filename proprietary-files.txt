@@ -82,6 +82,9 @@ lib/libqc-opt.so
 bin/netmgrd
 bin/qmuxd
 bin/rmt_storage
+bin/lpmkey
+bin/playlpm
+lib/libQmageDecoder.so
 lib/libaudioeq.so
 lib/libauth.so
 lib/libcm.so

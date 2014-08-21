@@ -25,19 +25,19 @@ int device_handle_key(int key_code, int visible) {
                 return HIGHLIGHT_DOWN;
 
             case KEY_POWER:
-/*                if (ui_get_showing_back_button()) {
+                if (ui_get_showing_back_button()) {
                     return SELECT_ITEM;
                 }
                 if (!get_allow_toggle_display() && !ui_root_menu)
                     return GO_BACK;
-*/                break;
+                break;
 
 	    case KEY_HOME:
                 return SELECT_ITEM;
 
             case KEY_END:
             case KEY_BACK:
-//                if (!get_allow_toggle_display() && !ui_root_menu)
+                if (!get_allow_toggle_display() && !ui_root_menu)
                     return GO_BACK;
         }
     }
