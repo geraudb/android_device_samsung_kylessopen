@@ -10,6 +10,7 @@ dalvik.vm.checkjni=0
 dalvik.vm.dexopt-data-only=1
 dalvik.vm.dexopt-flags=v=a,o=v,m=y,u=y
 dalvik.vm.execution-mode=int:jit
+dalvik.vm.debug.alloc=0
 
 # Display
 debug.sf.hw=1
@@ -28,9 +29,10 @@ rild.libargs=-d /dev/smd0
 ril.subscription.types=NV,RUIM
 ro.telephony.call_ring.multiple=false
 ro.telephony.call_ring.delay=3000
+ro.telephony.ril_class=QualcommSharedRIL
 
 # USB
-persist.sys.usb.config=mtp,adb
+persist.sys.usb.config=mass_storage,adb
 
 # Wifi
 wifi.interface=wlan0
