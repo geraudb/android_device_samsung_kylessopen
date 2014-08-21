@@ -14,6 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo kylessopen-userdebug
-add_lunch_combo kylessopen-eng
 add_lunch_combo cm_kylessopen-userdebug

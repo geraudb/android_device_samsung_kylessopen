@@ -197,13 +197,3 @@
 
 #for SysScope
 /dev/block/mmcblk0p13 0660 system system
-
-#wifi
-/dev/rfkill               0660   wifi        wifi
-
-/sys/class/rfkill/rfkill0/state            0660  bluetooth       bluetooth
-/sys/class/rfkill/rfkill0/type            0660  bluetooth       bluetooth
-/sys/class/rfkill/rfkill1/state            0660  bluetooth       bluetooth
-/sys/class/rfkill/rfkill1/type            0660  bluetooth       bluetooth
-/sys/class/rfkill/rfkill2/state            0660  bluetooth       bluetooth
-/sys/class/rfkill/rfkill2/type            0660  bluetooth       bluetooth

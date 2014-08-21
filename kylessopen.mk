@@ -19,8 +19,8 @@ PRODUCT_PACKAGES += \
     audio.primary.msm7x27a
 
 # Bluetooth
-PRODUCT_PACKAGES += \
-    btmac
+#PRODUCT_PACKAGES += \
+#    btmac
 
 # Device
 PRODUCT_PACKAGES += \
@@ -28,17 +28,6 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs \
     com.android.future.usb.accessory
-
-# FM Radio
-PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    qcom.fmradio
-
-# Charger
-PRODUCT_PACKAGES += \
-    charger \
-    charger_res_images
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -77,10 +66,6 @@ PRODUCT_COPY_FILES += \
 # Prebuilt
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/samsung/kylessopen/prebuilt/system,system)
-
-# Don't preload EGL drivers in Zygote at boot time
-PRODUCT_PROPERTY_OVERRIDES += \
-		ro.zygote.disable_gl_preload=true
 
 # Hardware features available on this device
 PRODUCT_COPY_FILES += \
