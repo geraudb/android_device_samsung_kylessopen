@@ -1,6 +1,6 @@
 CyanogenMod 11 device tree for the Samsung Galaxy Ace II x (GT-S7560M)
 
-How to compile (On Ubuntu 13.XX):
+How to compile (On Ubuntu 14.XX):
 
 1. Open terminal, create a new folder and "cd" into it.
 2. Type "repo init -u git://github.com/CyanogenMod/android.git -b cm-11.0" to initialize the repo.
