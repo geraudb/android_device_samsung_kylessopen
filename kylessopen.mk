@@ -19,8 +19,8 @@ PRODUCT_PACKAGES += \
     audio.primary.msm7x27a
 
 # Bluetooth
-#PRODUCT_PACKAGES += \
-#    btmac
+PRODUCT_PACKAGES += \
+    btmac
 
 # Device
 PRODUCT_PACKAGES += \
@@ -61,6 +61,10 @@ PRODUCT_PACKAGES += \
     libmm-omxcore \
     libOmxCore \
     libstagefrighthw
+
+# Webkit
+PRODUCT_PACKAGES += \
+    libwebcore
 
 # Ramdisk
 PRODUCT_COPY_FILES += \

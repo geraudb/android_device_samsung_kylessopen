@@ -37,7 +37,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_kylessopen_defconfig
+TARGET_KERNEL_CONFIG := kyle02_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/kylessopen
 TARGET_BOOTLOADER_BOARD_NAME := kylessopen
 BOARD_KERNEL_CMDLINE := androidboot.hardware=kylessopen
@@ -129,6 +129,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
 ## Webkit
 ENABLE_WEBGL := true
+PRODUCT_PREBUILT_WEBVIEWCHROMIUM := yes
 TARGET_WEBKIT_USE_MORE_MEMORY := true
 TARGET_FORCE_CPU_UPLOAD := true
 
