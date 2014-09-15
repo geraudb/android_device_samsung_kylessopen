@@ -1,0 +1,26 @@
+From 99a9d7ba407009fe037456c108a7190af2516b1c Mon Sep 17 00:00:00 2001
+From: geraud <android@fandb.ca>
+Date: Sun, 14 Sep 2014 18:18:15 -0400
+Subject: [PATCH] Fixing undefined symbol buf_info
+
+Change-Id: I47cc6993e25347baaf2b527bef5f7f64710af5aa
+---
+ include/hardware_legacy/AudioHardwareInterface.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/hardware_legacy/AudioHardwareInterface.h b/include/hardware_legacy/AudioHardwareInterface.h
+index 3bf3b10..4bf686f 100644
+--- a/include/hardware_legacy/AudioHardwareInterface.h
++++ b/include/hardware_legacy/AudioHardwareInterface.h
+@@ -124,7 +124,7 @@ public:
+     virtual status_t    flush()  {return INVALID_OPERATION;}
+     virtual status_t    stop()  {return INVALID_OPERATION;}
+     virtual int         setObserver(void *observer)  {return INVALID_OPERATION;}
+-    virtual status_t    getBufferInfo(buf_info **buf) {return INVALID_OPERATION;}
++//    virtual status_t    getBufferInfo(buf_info **buf) {return INVALID_OPERATION;}
+     virtual status_t    isBufferAvailable(int *isAvail) {
+         *isAvail = true;
+         return NO_ERROR;
+-- 
+1.8.3.2
+
